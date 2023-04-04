@@ -1,0 +1,1 @@
+docker build -f ./docker/Dockerfile.dev -t ins-imomtae/platform-dev:latest .

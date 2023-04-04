@@ -1,0 +1,13 @@
+@tailwind base;
+
+@layer base {
+  body {
+    @apply text-slate-900;
+  }
+  dialog::backdrop {
+    @apply bg-slate-900/50;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
