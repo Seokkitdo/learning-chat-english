@@ -7,11 +7,12 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "$store/*": ["src/lib/stores/*"],
-      "$utils/*": ["src/lib/utils/*"],
-      "$types/*": ["src/lib/types/*"],
-      "$components/*": ["src/lib/types/*"],
-      "$routes/*": ["src/routes/*"]
+      "$stores/*": ["src/stores/*"],
+      "$utils/*": ["src/utils/*"],
+      "$types/*": ["src/types/*"],
+      "$components/*": ["src/types/*"],
+      "$routes/*": ["src/routes/*"],
+      "$auth/*": ["src/auth/*"]
     },
     /**
      * Typecheck JS in `.svelte` and `.js` files by default.
