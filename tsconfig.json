@@ -10,7 +10,7 @@
       "$stores/*": ["src/stores/*"],
       "$utils/*": ["src/utils/*"],
       "$types/*": ["src/types/*"],
-      "$components/*": ["src/types/*"],
+      "$components/*": ["src/components/*"],
       "$routes/*": ["src/routes/*"],
       "$auth/*": ["src/auth/*"]
     },
