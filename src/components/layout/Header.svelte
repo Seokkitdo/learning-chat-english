@@ -17,7 +17,7 @@
 
 {#if $location.pathname !== '/login'}
   <header
-    class="fixed top-0 left-0 w-full bg-gray-500 text-white text-sm leading-none z-50">
+    class="fixed left-0 w-full bg-gray-500 text-white text-sm leading-none z-50">
     <div class="min-w-5xl max-w-screen-xl px-5 mx-auto">
       <div class="flex items-center justify-between">
         <div class="h-20 flex items-center gap-18">
