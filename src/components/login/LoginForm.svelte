@@ -25,7 +25,7 @@
     on:click={signIn}
     on:keydown={signIn}
     type="button"
-    class="flex justify-center items-center w-fit p-4 bg-google hover:bg-red-700 focus:ring-red-500 focus:ring-offset-red-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
+    class="flex justify-center items-center w-fit p-4 bg-google hover:bg-blue-600 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
     <svg
       width="20"
       height="20"
