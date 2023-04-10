@@ -18,7 +18,7 @@ export default defineConfig({
   server: {
     cors: false,
     host: '0.0.0.0',
-    port: 5000,
+    port: 5500,
     hmr: {
       protocol: 'ws'
     },
@@ -27,6 +27,6 @@ export default defineConfig({
     }
   },
   preview: {
-    port: 5000
+    port: 5500
   }
 })

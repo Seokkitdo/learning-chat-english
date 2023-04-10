@@ -1,1 +1,1 @@
-docker run -it --rm -v $(pwd):/app -p 5000:5000 ins-imomtae/platform-dev:latest /bin/bash
+docker run -it --rm -v $(pwd):/app -p 5500:5500 ins-imomtae/platform-dev:latest /bin/bash
