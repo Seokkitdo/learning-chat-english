@@ -26,7 +26,7 @@
 </script>
 
 <div class="w-screen h-screen flex justify-center items-center bg-bgLogin">
-  <div class="sm:border border-gray-300 max-w-4xl mx-auto">
+  <div class="max-w-4xl mx-auto">
     <div
       class="grid grid-cols-1 md:grid-cols-2 sm:max-w-[400px] md:min-w-[900px] lg:min-h-[600px]">
       <!-- <div class="grid grid-cols-1 sm:grid-cols-2 md:min-h-[600px]"> -->
