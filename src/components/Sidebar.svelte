@@ -9,10 +9,6 @@
     await user.signOut()
     navigate('/login')
   }
-
-  questions.subscribe((test) => {
-    console.log('test', test)
-  })
 </script>
 
 <div class="bg-[#202123] hidden bg-gray-900 md:flex md:w-[260px] md:flex-col">
