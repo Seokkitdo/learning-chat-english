@@ -28,39 +28,25 @@
     return result
   }
 
-  let element
+  let chatContainer: HTMLElement
 
   onMount(() => {
-    element = document.getElementById('chat-container')
+    chatContainer = document.getElementById('chat-container')
+
+    // chatContainer가 존재하면 MutationObserver를 생성합니다.
+    if (chatContainer) {
+      const observer = new MutationObserver(() => {
+        console.log(chatContainer.scrollHeight)
+        console.log('chatContainer', chatContainer)
+        chatContainer.scrollTop += chatContainer.scrollHeight
+      })
+
+      observer.observe(chatContainer, { childList: true })
+    }
   })
-
-  $: if (element) {
-    const observer = new MutationObserver((mutations) => {
-      // DOM 변화를 감지하여 스크롤을 맨 아래로 이동시킵니다.
-      scrollToBottom(element)
-    })
-
-    // MutationObserver를 시작합니다.
-    observer.observe(element, { childList: true, subtree: true })
-  }
-
-  function scrollToBottom(element: HTMLElement) {
-    console.log('height', element.scrollHeight)
-    element.scrollTop = element.scrollHeight
-  }
-  // if (element) {
-  //   // MutationObserver를 생성합니다.
-  //   const observer = new MutationObserver((mutations) => {
-  //     // DOM 변화를 감지하여 스크롤을 맨 아래로 이동시킵니다.
-  //     scrollToBottom(element)
-  //   })
-
-  //   // MutationObserver를 시작합니다.
-  //   observer.observe(element, { childList: true, subtree: true })
-  // }
 </script>
 
-<div class="flex-1 overflow-y-auto">
+<div class="flex-1 overflow-scroll">
   <div
     id="chat-container"
     class="flex flex-col items-center text-sm dark:bg-gray-800">
