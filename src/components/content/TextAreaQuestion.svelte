@@ -30,14 +30,16 @@
       resizeTextarea()
     } else if (event.key === 'Enter') {
       event.preventDefault()
+      event.stopImmediatePropagation() // 이 부분을 추가
       ;(event.target as HTMLTextAreaElement).style.height = originalHeight
-      questions.updateQuestion(value)
-      value = ''
-      answers.set(
-        '행정각부의 설치·조직과 직무범위는 법률로 정한다. 대통령은 법률이 정하는 바에 의하여 사면·감형 또는 복권을 명할 수 있다. 공무원의 직무상 불법행위로 손해를 받은 국민은 법률이 정하는 바에 의하여 국가 또는 공공단체에 정당한 배상을 청구할 수 있다. 이 경우 공무원 자신의 책임은 면제되지 아니한다.모든 국민은 사생활의 비밀과 자유를 침해받지 아니한다. 국가는 지역간의 균형있는 발전을 위하여 지역경제를 육성할 의무를 진다. 헌법재판소는 법률에 저촉되지 아니하는 범위안에서 심판에 관한 절차, 내부규율과 사무처리에 관한 규칙을 제정할 수 있다.'
-      )
+      if (value.trim()) {
+        // 공백 문자열이 아닐 경우에만 질문을 추가하도록 변경
+        questions.updateQuestion(value)
+        value = ''
+      }
     }
   }
+
   function handleFocus() {
     originalHeight = (
       document.getElementById('textarea') as HTMLTextAreaElement
@@ -60,7 +62,7 @@
           placeholder="Type something..."
           bind:value={value}
           on:input={resizeTextarea}
-          on:keydown={handleKeyPress}
+          on:keypress={handleKeyPress}
           on:focus={handleFocus} />
 
         <button
