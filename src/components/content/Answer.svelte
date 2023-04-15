@@ -1,52 +1,16 @@
 <script lang="ts">
+  import { onMount, afterUpdate } from 'svelte'
   import questions from '$stores/questions'
-  import { onMount } from 'svelte'
-
-  async function simulateTyping(sender, message) {
-    const typingDelay = 50 // in milliseconds
-    const messageElement = document.createElement('div')
-    messageElement.classList.add('message')
-    messageElement.innerHTML = `<strong>${sender}:</strong> `
-    // chatBox.appendChild(messageElement)
-
-    for (let i = 0; i < message.length; i++) {
-      await new Promise((resolve) => setTimeout(resolve, typingDelay))
-      messageElement.innerHTML += message.charAt(i)
-    }
+  function scrollToBottom() {
+    const chatContainer = document.getElementById('chatContainer')
+    chatContainer.scrollTop = chatContainer.scrollHeight
   }
 
-  let answer = ''
-  async function simulateTyping2(sender, message) {
-    const typingDelay = 50 // in milliseconds
-    let result = `<strong>${sender}:</strong> `
-
-    for (let i = 0; i < message.length; i++) {
-      await new Promise((resolve) => setTimeout(resolve, typingDelay))
-      result += message.charAt(i)
-    }
-
-    return result
-  }
-
-  let chatContainer: HTMLElement
-
-  onMount(() => {
-    chatContainer = document.getElementById('chat-container')
-
-    // chatContainer가 존재하면 MutationObserver를 생성합니다.
-    if (chatContainer) {
-      const observer = new MutationObserver(() => {
-        console.log(chatContainer.scrollHeight)
-        console.log('chatContainer', chatContainer)
-        chatContainer.scrollTop += chatContainer.scrollHeight
-      })
-
-      observer.observe(chatContainer, { childList: true })
-    }
-  })
+  onMount(scrollToBottom)
+  afterUpdate(scrollToBottom)
 </script>
 
-<div class="flex-1 overflow-scroll">
+<div class="flex-1 overflow-auto" id="chatContainer">
   <div
     id="chat-container"
     class="flex flex-col items-center text-sm dark:bg-gray-800">
@@ -66,8 +30,7 @@
               <div class="flex flex-grow flex-col gap-3">
                 <div
                   class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap">
-                  {simulateTyping2('AI', question)}
-                  <!-- {typeOut(question, 1000)} -->
+                  AI : {question}
                 </div>
               </div>
             </div>
@@ -84,12 +47,7 @@
                   class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap">
                   <div
                     class="markdown prose w-full break-words dark:prose-invert light">
-                    <p>
-                      {simulateTyping2(
-                        'sender',
-                        '안녕하세요! 무엇을 도와드릴까요?'
-                      )}
-                    </p>
+                    <p>'sender', '안녕하세요! 무엇을 도와드릴까요?'</p>
                   </div>
                 </div>
               </div>
