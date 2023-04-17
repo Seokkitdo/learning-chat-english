@@ -1,7 +1,10 @@
 <script>
+  import { onMount } from 'svelte'
+  import { navigate } from 'svelte-navigator'
+
   import questions from '$stores/questions'
   import user from '$stores/user'
-  import { navigate } from 'svelte-navigator'
+  import chatRooms from '$stores/chatRooms'
 
   // Sidebar 아이콘 클릭 시 열리는 메뉴 리스트
 
@@ -9,6 +12,10 @@
     await user.signOut()
     navigate('/login')
   }
+
+  onMount(() => {
+    // 채팅방 api 요청
+  })
 </script>
 
 <div class="bg-[#202123] hidden bg-gray-900 md:flex md:w-[260px] md:flex-col">
@@ -18,11 +25,11 @@
       구문 분석하기
     </div>
     <div class="flex-col flex-1 overflow-y-auto border-b border-white/20 -mr-2">
-      {#if !!$questions}
-        {#each $questions as question}
+      {#if !!$chatRooms}
+        {#each $chatRooms as chatRoom}
           <div
             class="flex w-full items-center px-2 py-2 text-base font-medium text-gray-900 rounded-md hover:bg-gray-500">
-            <span class="ml-2 text-white">{question}</span>
+            <span class="ml-2 text-white">{chatRoom.id}</span>
           </div>
         {/each}
       {/if}

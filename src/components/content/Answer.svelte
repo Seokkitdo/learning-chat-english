@@ -19,6 +19,20 @@
       Learning Chat English
     </div>
 
+    <div
+      class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10">
+      <div
+        class="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto h-[500px]">
+        <div class="w-full">
+          <textarea
+            class="w-full resize-none border rounded-lg"
+            name="submitSenetence"
+            id=""
+            cols="10"
+            rows="10" />
+        </div>
+      </div>
+    </div>
     {#if !!$questions}
       {#each $questions as question}
         <div
