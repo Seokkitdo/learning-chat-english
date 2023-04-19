@@ -24,22 +24,19 @@
 </script>
 
 <div class="flex-1 overflow-auto" id="chatContainer">
-  <div
-    id="chat-container"
-    class="flex flex-col items-center text-sm dark:bg-gray-800">
+  <div id="chat-container" class="flex flex-col items-center text-sm">
     <div
-      class="flex w-full items-center justify-center gap-1 border-b border-black/10 bg-gray-50 p-3 text-gray-500 dark:border-gray-900/50 dark:bg-gray-700 dark:text-gray-300">
+      class="flex w-full items-center justify-center gap-1 border-b border-black/10 bg-gray-50 p-3 text-gray-500">
       Learning Chat English
     </div>
 
-    <div
-      class="group w-full h-full text-gray-800 dark:text-gray-100 border-b border-black/10">
+    <div class="group w-full h-full text-gray-800 border-b border-black/10">
       <div
         class="flex flex-col text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto">
         <div class="flex items-center justify-center w-full">
           <label
             for="dropzone-file"
-            class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+            class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50">
             <div class="flex flex-col items-center justify-center pt-2 pb-3">
               <svg
                 aria-hidden="true"
@@ -53,12 +50,10 @@
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" /></svg>
-              <p
-                id="file-label"
-                class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+              <p id="file-label" class="mb-2 text-sm text-gray-500">
                 <span class="font-semibold">Click to upload</span> or drag and drop
               </p>
-              <p class="text-xs text-gray-500 dark:text-gray-400">
+              <p class="text-xs text-gray-500">
                 SVG, PNG, JPG or GIF (MAX. 800x400px)
               </p>
             </div>
@@ -68,7 +63,7 @@
         </div>
         <div class="w-full">
           <textarea
-            class="w-full resize-none border rounded-lg"
+            class="w-full resize-none border rounded-lg p-2"
             name="submitSenetence"
             id=""
             cols="10"
@@ -78,8 +73,7 @@
     </div>
     {#if !!$questions}
       {#each $questions as question}
-        <div
-          class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10">
+        <div class="group w-full text-gray-800 border-b border-black/10">
           <div
             class="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto">
             <div
@@ -94,7 +88,7 @@
           </div>
         </div>
         <div
-          class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 bg-gray-50 dark:bg-[#444654]">
+          class="group w-full text-gray-800 border-b border-black/10 bg-gray-50">
           <div
             class="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto">
             <div
@@ -102,8 +96,7 @@
               <div class="flex flex-grow flex-col gap-3">
                 <div
                   class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap">
-                  <div
-                    class="markdown prose w-full break-words dark:prose-invert light">
+                  <div class="markdown prose w-full break-words light">
                     <p>'sender', '안녕하세요! 무엇을 도와드릴까요?'</p>
                   </div>
                 </div>
